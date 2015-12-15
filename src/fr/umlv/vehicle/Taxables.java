@@ -33,6 +33,6 @@ public class Taxables {
     }
 
     static long computeTax(List<Taxable> convoy){
-        return convoy.stream().map((t)->t.taxe()).collect(Collectors.reducing((a,b)->a+b)).get();
+        return convoy.stream().mapToLong((t)->t.taxe()).sum();
     }
 }
